@@ -72,7 +72,7 @@ public class RobotContainer {
         SmartDashboard.putData("Auto Chooser", autoChooser);
         // SmartDashboard.putData("Pivot Subsystem", pivot); // <--- mostra no dashboard
         DriverStation.silenceJoystickConnectionWarning(true);
-        setDefaultCommand(IntakePivotCommand(IntakeAngle, ezequiel, fall));
+        m_IntakeAngle.setDefaultCommand(IntakePivotCommand(IntakeAngle, ezequiel, fall));
 
         configureBindings();
     }
