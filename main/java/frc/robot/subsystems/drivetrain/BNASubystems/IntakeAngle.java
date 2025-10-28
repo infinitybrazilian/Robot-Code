@@ -40,6 +40,11 @@ public class IntakeAngle extends SubsystemBase {
  
   }
 
+  public void setSpeed(double speed){
+    m_leftAnglemotor.setSpeed(speed);
+    m_rightAnglemotor.setSpeed(-speed);
+  }
+
   @Override
   public void periodic() {
       // Calcula a saída do PID com base na medição atual 
