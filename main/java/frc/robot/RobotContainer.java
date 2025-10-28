@@ -72,6 +72,7 @@ public class RobotContainer {
         SmartDashboard.putData("Auto Chooser", autoChooser);
         // SmartDashboard.putData("Pivot Subsystem", pivot); // <--- mostra no dashboard
         DriverStation.silenceJoystickConnectionWarning(true);
+        setDefaultCommand(IntakePivotCommand(IntakeAngle, ezequiel, fall));
 
         configureBindings();
     }
@@ -96,8 +97,7 @@ public class RobotContainer {
         driverControl.rightBumper().onTrue(m_IntakeAngle.setSetpoint(Constants.ScorePose.FLOOR));
         driverControl.leftTrigger().onTrue(m_IntakeAngle.setSetpoint(Constants.ScorePose.FLOAT));
         
-        driverControl.b().whileTrue(Commands.startEnd(() -> ezequiel.setSpeed(-0.3), () -> ezequiel.setSpeed(0), ezequiel));
-
+        driverControl.b().whileTrue(new IntakePivotCommand(m_IntakeAngle, ezequiel, arise));
 
         // ====== Pivot subqqsystem control ======
 //         driverControl.leftTrigger().onTrue(pivot.setSetpoint(PivotConstants.ScorePose.FLOOR));   // desce
