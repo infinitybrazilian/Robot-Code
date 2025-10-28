@@ -39,6 +39,21 @@ public final class Constants {
     public static final double multiplicadorTranslacionalX = 0.9;
   }
 
+  public static final class Setpoints {
+    public static final double intakeAriseSet = 0.0;
+    public static final double intakeFallSet = 0.0;
+  }
+
+  public static final class PIDConstants {
+    public static final double ariseP = 0.1;
+    public static final double ariseI = 0.0;
+    public static final double ariseD = 0.0;
+
+    public static final double fallP = 0.1;
+    public static final double fallI = 0.0;
+    public static final double fallD = 0.0;
+  }
+
   public static final class Strings {
     public static final String ON = "ON";
     public static final String OFF = "OFF";
